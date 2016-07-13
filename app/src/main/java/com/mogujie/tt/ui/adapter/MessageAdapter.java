@@ -167,7 +167,7 @@ public class MessageAdapter extends BaseAdapter {
      * 下拉载入历史消息,从最上面开始添加
      */
     public void loadHistoryList(final List<MessageEntity> historyList) {
-        logger.d("#messageAdapter#loadHistoryList");
+        logger.d("#messageAdapter#loadHistoryList:");
         if (null == historyList || historyList.size() <= 0) {
             return;
         }

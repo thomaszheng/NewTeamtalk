@@ -25,6 +25,7 @@ import android.provider.Settings;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -232,15 +233,18 @@ public class MessageActivity extends TTBaseActivity
 
     // 触发条件,imservice链接成功，或者newIntent
     private void initData() {
+
+        Log.i("thomas","messageactivity initdata");
         historyTimes = 0;
         adapter.clearItem();
         ImageMessage.clearImageMessageList();
         loginUser = imService.getLoginManager().getLoginInfo();
         peerEntity = imService.getSessionManager().findPeerEntity(currentSessionKey);
+        adapter.setImService(imService, loginUser);
         // 头像、历史消息加载、取消通知
         setTitleByUser();
         reqHistoryMsg();
-        adapter.setImService(imService, loginUser);
+
         imService.getUnReadMsgManager().readUnreadSession(currentSessionKey);
         imService.getNotificationManager().cancelSessionNotifications(currentSessionKey);
     }

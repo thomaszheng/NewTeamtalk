@@ -253,14 +253,15 @@ public class IMLoginManager extends IMManager {
 
         IMBaseDefine.ResultType  code = loginRes.getResultCode();
         switch (code){
-            case REFUSE_REASON_NONE:{
+            case REFUSE_REASON_NONE:
+            {
                 IMBaseDefine.UserStatType userStatType = loginRes.getOnlineStatus();
                 IMBaseDefine.UserInfo userInfo =  loginRes.getUserInfo();
                 loginId = userInfo.getUserId();
                 loginInfo = ProtoBuf2JavaBean.getUserEntity(userInfo);
                 onLoginOk();
-            }break;
-
+            }
+            break;
             case REFUSE_REASON_DB_VALIDATE_FAILED:{
                 logger.e("login#login msg server failed, result:%s", code);
                 triggerEvent(LoginEvent.LOGIN_AUTH_FAILED);

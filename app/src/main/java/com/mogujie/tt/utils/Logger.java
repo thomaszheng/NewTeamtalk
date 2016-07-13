@@ -69,7 +69,7 @@ public class Logger {
 	 * log.i
 	 */
 	public void i(String format, Object... args) {
-		if (logLevel <= Log.INFO) {
+		/*if (logLevel <= Log.INFO) {
 			lock.lock();
 			try {
 				String message = createMessage(getInputString(format, args));
@@ -77,14 +77,19 @@ public class Logger {
 			} finally {
 				lock.unlock();
 			}
-		}
+		}*/
+		String message = createMessage(getInputString(format, args));
+		Log.i(tagName, message);
+
+
+
 	}
 
 	/**
 	 * log.v
 	 */
 	public void v(String format, Object... args) {
-		if (logLevel <= Log.VERBOSE) {
+		/*if (logLevel <= Log.VERBOSE) {
 			lock.lock();
 			try {
 				String message = createMessage(getInputString(format, args));
@@ -92,14 +97,16 @@ public class Logger {
 			} finally {
 				lock.unlock();
 			}
-		}
+		}*/
+		String message = createMessage(getInputString(format, args));
+		Log.v(tagName, message);
 	}
 
 	/**
 	 * log.d
 	 */
 	public void d(String format, Object... args) {
-		if (logLevel <= Log.DEBUG) {
+		/*if (logLevel <= Log.DEBUG) {
 			lock.lock();
 			try {
 				String message = createMessage(getInputString(format, args));
@@ -107,14 +114,16 @@ public class Logger {
 			} finally {
 				lock.unlock();
 			}
-		}
+		}*/
+		String message = createMessage(getInputString(format, args));
+		Log.i(tagName, message);
 	}
 
 	/**
 	 * log.e
 	 */
 	public void e(String format, Object... args) {
-		if (logLevel <= Log.ERROR) {
+		/*if (logLevel <= Log.ERROR) {
 			lock.lock();
 			try {
 				String message = createMessage(getInputString(format, args));
@@ -122,7 +131,9 @@ public class Logger {
 			} finally {
 				lock.unlock();
 			}
-		}
+		}*/
+		String message = createMessage(getInputString(format, args));
+		Log.e(tagName, message);
 	}
 
 	private String getInputString(String format, Object... args) {

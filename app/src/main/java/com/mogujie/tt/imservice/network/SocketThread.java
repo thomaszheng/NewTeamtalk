@@ -80,8 +80,7 @@ public class SocketThread extends Thread {
 			if ((null == channel || (null != channel && !channel.isConnected()))
 					&& null != this.strHost && this.nPort > 0) {
 				// Start the connection attempt.
-				channelFuture = clientBootstrap.connect(new InetSocketAddress(
-				strHost, nPort));
+				channelFuture = clientBootstrap.connect(new InetSocketAddress(strHost, nPort));
 				// Wait until the connection attempt succeeds or fails.
 				channel = channelFuture.awaitUninterruptibly().getChannel();
 				if (!channelFuture.isSuccess()) {

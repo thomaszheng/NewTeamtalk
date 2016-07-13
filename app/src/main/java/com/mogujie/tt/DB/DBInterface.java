@@ -302,11 +302,8 @@ public class DBInterface {
         /**解决消息重复的问题*/
         int preMsgId = lastMsgId +1;
         MessageDao dao = openReadableDb().getMessageDao();
-        List<MessageEntity> listMsg = dao.queryBuilder().where(MessageDao.Properties.Created.le(lastCreateTime)
-                    , MessageDao.Properties.SessionKey.eq(chatKey)
-                    ,MessageDao.Properties.MsgId.notEq(preMsgId))
-                    .whereOr(MessageDao.Properties.MsgId.le(lastMsgId),
-                             MessageDao.Properties.MsgId.gt(90000000))
+        List<MessageEntity> listMsg = dao.queryBuilder().where(MessageDao.Properties.Created.le(Integer.MAX_VALUE), MessageDao.Properties.SessionKey.eq(chatKey),MessageDao.Properties.MsgId.notEq(preMsgId))
+                     .whereOr(MessageDao.Properties.MsgId.le(lastMsgId),MessageDao.Properties.MsgId.gt(90000000))
                     .orderDesc(MessageDao.Properties.Created)
                     .orderDesc(MessageDao.Properties.MsgId)
                     .limit(count)
