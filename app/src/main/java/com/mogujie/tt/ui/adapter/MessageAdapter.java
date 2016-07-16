@@ -255,7 +255,10 @@ public class MessageAdapter extends BaseAdapter {
         int len = msgObjectList.size();
         for (int index = len - 1; index > 0; index--) {
             Object object = msgObjectList.get(index);
+
+
             if (object instanceof MessageEntity) {
+
                 MessageEntity entity = (MessageEntity) object;
                 if (object instanceof ImageMessage) {
                     ImageMessage.addToImageMessageList((ImageMessage) object);

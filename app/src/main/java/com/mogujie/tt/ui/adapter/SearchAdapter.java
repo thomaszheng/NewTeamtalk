@@ -47,7 +47,7 @@ public class SearchAdapter extends BaseAdapter implements
     private String searchKey;
     private Context ctx;
     private IMService imService;
-    public SearchAdapter(Context context,IMService pimService){
+    public  SearchAdapter(Context context,IMService pimService){
         this.ctx = context;
         this.imService = pimService;
     }

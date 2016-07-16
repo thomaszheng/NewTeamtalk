@@ -144,7 +144,8 @@ public class IMReconnectManager extends IMManager {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what){
-                case HANDLER_CHECK_NETWORK:{
+                case HANDLER_CHECK_NETWORK:
+                {
                       if(!NetworkUtil.isNetWorkAvalible(ctx)){
                           logger.w("reconnect#handleMessage#网络依旧不可用");
                           releaseWakeLock();
@@ -190,8 +191,7 @@ public class IMReconnectManager extends IMManager {
             if (netinfo.isAvailable()) {
                 /**网络显示可用*/
                 /**判断是否有必要重练*/
-                if (status == ReconnectEvent.NONE
-                        || !IMLoginManager.instance().isEverLogined()
+                if (status == ReconnectEvent.NONE || !IMLoginManager.instance().isEverLogined()
                         || IMLoginManager.instance().isKickout()
                         || IMSocketManager.instance().isSocketConnect()
                         ) {

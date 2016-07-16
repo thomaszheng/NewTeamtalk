@@ -227,9 +227,10 @@ public class ImageGridActivity extends Activity implements OnTouchListener {
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         setAdapterSelectedMap(null);
         imServiceConnector.disconnect(this);
-        super.onStop();
+
     }
 
     public static void setSendText(int selNum) {

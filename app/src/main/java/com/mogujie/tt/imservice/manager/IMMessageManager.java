@@ -216,7 +216,7 @@ public class IMMessageManager extends IMManager{
      * 1. 解析消息的类型
      * 2. 根据不同的类型,转化成不同的消息
      * 3. 先保存在DB[insertOrreplace]中，session的更新，Unread的更新
-     * 4上层通知
+     * 4.上层通知
      * @param imMsgData
      */
     public void onRecvMessage(IMMessage.IMMsgData imMsgData) {

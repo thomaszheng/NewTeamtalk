@@ -183,8 +183,7 @@ public class ImageMessage extends MessageEntity implements Serializable {
         msg.setDisplayType(DBConstant.SHOW_IMAGE_TYPE);
         // content 自动生成的
         int peerType = peerEntity.getType();
-        int msgType = peerType == DBConstant.SESSION_TYPE_GROUP ? DBConstant.MSG_TYPE_GROUP_TEXT :
-                DBConstant.MSG_TYPE_SINGLE_TEXT;
+        int msgType = peerType == DBConstant.SESSION_TYPE_GROUP ? DBConstant.MSG_TYPE_GROUP_TEXT :DBConstant.MSG_TYPE_SINGLE_TEXT;
         msg.setMsgType(msgType);
 
         msg.setStatus(MessageConstant.MSG_SENDING);

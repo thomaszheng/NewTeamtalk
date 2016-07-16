@@ -308,6 +308,7 @@ public class ChatFragment extends MainFragment
         }
     }
 
+    //
     public void onEventMainThread(ReconnectEvent reconnectEvent){
         switch (reconnectEvent){
             case DISABLE:{

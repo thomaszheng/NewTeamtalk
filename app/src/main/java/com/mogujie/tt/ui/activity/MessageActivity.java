@@ -370,6 +370,8 @@ public class MessageActivity extends TTBaseActivity
     }
 
 
+
+    // 用户选择完图片
     public void onEventMainThread(SelectEvent event) {
         List<ImageItem> itemList = event.getList();
         if (itemList != null || itemList.size() > 0)
@@ -929,7 +931,8 @@ public class MessageActivity extends TTBaseActivity
                 }
             }
             break;
-            case R.id.send_message_btn: {
+            case R.id.send_message_btn:
+            {
                 logger.d("message_activity#send btn clicked");
 
                 String content = messageEdt.getText().toString();

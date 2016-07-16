@@ -30,11 +30,9 @@ public class MoGuHttpClient {
 			conn.setUseCaches(false);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("connection", "Keep-Alive");
-			conn.setRequestProperty("user-agent",
-					"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
+			conn.setRequestProperty("user-agent","Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
 			conn.setRequestProperty("Charsert", "UTF-8");
-			conn.setRequestProperty("Content-Type",
-					"multipart/form-data; boundary=" + BOUNDARY);
+			conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
 			OutputStream out = new DataOutputStream(conn.getOutputStream());
 			byte[] end_data = ("\r\n--" + BOUNDARY + "--\r\n").getBytes();// 定义最后数据分隔线

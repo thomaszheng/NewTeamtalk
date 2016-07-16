@@ -120,6 +120,8 @@ public class IMSocketManager extends IMManager {
         }
     }
 
+
+    // 收到消息时候，处理数据
     public void packetDispatch(ChannelBuffer channelBuffer){
         DataBuffer buffer = new DataBuffer(channelBuffer);
         com.mogujie.tt.protobuf.base.Header header = new com.mogujie.tt.protobuf.base.Header();

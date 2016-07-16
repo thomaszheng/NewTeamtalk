@@ -106,11 +106,12 @@ public class IMService extends Service {
         }
     }
 
-    // EventBus 事件驱动
+    // EventBus 事件驱动  登录完成的事件 在IMLoginManager 中发出
     public void onEvent(LoginEvent event){
        switch (event){
            case LOGIN_OK:
-               onNormalLoginOk();break;
+               onNormalLoginOk();
+               break;
            case LOCAL_LOGIN_SUCCESS:
                onLocalLoginOk();
                break;
@@ -118,7 +119,8 @@ public class IMService extends Service {
                onLocalNetOk();
                break;
            case LOGIN_OUT:
-               handleLoginout();break;
+               handleLoginout();
+               break;
        }
     }
 
